@@ -37,20 +37,20 @@ ContactsManager.sln
 
 # Getting Started
 
-- Prerequisties
+## Prerequisties
   - Microsoft SQL Server or SQLExpress Edition
   - Visual Studio 2017 or above
   - IIS 7
 
-- Installation
+## Installation
 
-  - Database Setup:
+  ### Database Setup:
   
-    1. Open SQL Server Management Studio and connect to MSSQL/SQLExpress server where you want to create the ContactManager database.
+   1. Open SQL Server Management Studio and connect to MSSQL/SQLExpress server where you want to create the ContactManager database.
     
-    2. After connecting to the server, create database with the name `ContactsManagerDB`.
+   2. After connecting to the server, create database with the name `ContactsManagerDB`.
     
-    3. Execute below database script to create Contact table:
+   3. Execute below database script to create Contact table:
     
       ```sql
 
@@ -87,29 +87,31 @@ ContactsManager.sln
 
       ```
      
-     4. Add few contacts manually in Contact table for testing purpose.
+   4. Add few contacts manually in Contact table for testing purpose.
      
-    - Application Setup: Open ContactsManager.sln in VS2017 and follow below steps to setup the application:
+  ### Application Setup: 
+  Open ContactsManager.sln in VS2017 and follow below steps to setup the application:
     
-     - Database Connection String:
-      1. Modify `ContactsManagerDBEntities` connection string in `Web.config` files for both `Evolent.ContactsMgmt.WebApi` and             `Evolent.ContactsMgmt.WebApp` projects. Ensure `data source`,`User Id` and  `Password` are correct as per the database server configured earlier. 
+   - Database Connection String:
+     1. Modify `ContactsManagerDBEntities` connection string in `Web.config` files for both `Evolent.ContactsMgmt.WebApi` and             `Evolent.ContactsMgmt.WebApp` projects. Ensure `data source`,`User Id` and  `Password` are correct as per the database server configured earlier. 
      
-     - Publish ContactsManager WebApi on IIS:
-      1. Right click on Evolent.ContactsMgmt.WebApi and click on Publish. A custom profile is already created in the project for publishing the WebApi in wwwroot folder of IIS. Modify the settings if required.
-      2. Open IIS Manager. Under Application pools, add a new AppPool called `ContactsManagerAppPool`.
-      3. Configure a new Website named `ContactsManagerApi` and select `ContactsManagerAppPool` under AppPool. In `Physical Path`, set the wwwroot directory where ContactManager WebApi was published. Also specify one of the available ports on the machine `e.g. 9000` .
-      4. Check the `Start Website Immediately` checkbox and click OK. ContactsManager WebAPI should be up and running now. 
-      5. Open the browser and enter the URL `http://localhost:[port]/api/contact/getAllContacts`. You must see all the contacts you have added in the database during setup.
+   - Publish ContactsManager WebApi on IIS:
+     1. Right click on Evolent.ContactsMgmt.WebApi and click on Publish. A custom profile is already created in the project for publishing the WebApi in wwwroot folder of IIS. Modify the settings if required.
+     2. Open IIS Manager. Under Application pools, add a new AppPool called `ContactsManagerAppPool`.
+     3. Configure a new Website named `ContactsManagerApi` and select `ContactsManagerAppPool` under AppPool. In `Physical Path`, set the wwwroot directory where ContactManager WebApi was published. Also specify one of the available ports on the machine `e.g. 9000` .
+     4. Check the `Start Website Immediately` checkbox and click OK. ContactsManager WebAPI should be up and running now. 
+     5. Open the browser and enter the URL `http://localhost:[port]/api/contact/getAllContacts`. You must see all the contacts you have added in the database during setup.
      
      
-     - Publish ContactsManager MVC WebApp on IIS:
-      1. Right click on Evolent.ContactsMgmt.WebApp and click on Publish. A custom profile is already created in the project for publishing the WebApp in wwwroot folder of IIS. Modify the settings if required.
-      2. Open IIS Manager. Under Application pools, add a new AppPool called `ContactsManagerAppPool`.
-      3. Configure a new Website named `ContactsManagerWebApp` and select `ContactsManagerAppPool` under AppPool. In `Physical Path`, set the wwwroot directory where ContactManager WebApp was published. Also specify one of the available ports on the machine `e.g. 9001` .
-      4. Check the `Start Website Immediately` checkbox and click OK. ContactsManager WebAPI should be up and running now. 
+   - Publish ContactsManager MVC WebApp on IIS:
+     1. Right click on Evolent.ContactsMgmt.WebApp and click on Publish. A custom profile is already created in the project for publishing the WebApp in wwwroot folder of IIS. Modify the settings if required.
+     2. Open IIS Manager. Under Application pools, add a new AppPool called `ContactsManagerAppPool`.
+     3. Configure a new Website named `ContactsManagerWebApp` and select `ContactsManagerAppPool` under AppPool. In `Physical Path`, set the wwwroot directory where ContactManager WebApp was published. Also specify one of the available ports on the machine `e.g. 9001` .
+     4. Check the `Start Website Immediately` checkbox and click OK. ContactsManager WebApp should be up and running now. 
       5. Open the browser and enter the URL `http://localhost:[port]/`. You must see the All Contacts list page.
      
-                             `ContactsManager setup is now completed. Thank you for installing it.`
+
+> ContactsManager setup is now completed. Thank you for installing it.
 
 
 # Author
